@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "repo2flow"
+version = "0.1.0"
+description = "Turn code repositories into a Wispr Flow dictionary CSV of domain-specific terms."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = ["wordfreq>=3.0"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+repo2flow = "repo2flow.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
